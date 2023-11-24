@@ -1,12 +1,13 @@
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa6";
 import useAuthHook from "../../hooks/useAuthHook";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { toast } from "react-toastify";
 
 const SocialLogin = () => {
   const { googleSignIn } = useAuthHook();
   const navigate = useNavigate();
+  const location = useLocation();
   const axiosPublic = useAxiosPublic();
   const handleGoogleSingIn = () => {
     googleSignIn().then(({ user }) => {
@@ -18,7 +19,7 @@ const SocialLogin = () => {
         };
         axiosPublic.post("/users", newUser).then(() => {
           toast.success("Login Successfully");
-          navigate("/", { replace: true });
+          navigate(location?.state?.from?.pathname || "/", { replace: true });
         });
       }
     });

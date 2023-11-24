@@ -6,7 +6,6 @@ import {
   FaHome,
   FaShoppingCart,
   FaStar,
-  FaUtensilSpoon,
   FaWallet,
 } from "react-icons/fa";
 import Logo from "../components/Logo";
@@ -17,6 +16,7 @@ import {
   FaEnvelope,
   FaListUl,
   FaUsers,
+  FaUtensils,
 } from "react-icons/fa6";
 import Container from "../components/Container";
 import useAdmin from "../hooks/useAdmin";
@@ -45,7 +45,7 @@ const DashboardLayout = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/add-items">
-                    <FaUtensilSpoon className="text-2xl" /> Add Items
+                    <FaUtensils className="text-2xl" /> Add Items
                   </NavLink>
                 </li>
                 <li>
@@ -128,7 +128,7 @@ const DashboardLayout = () => {
           </ul>
         </div>
         {/* dashboard content */}
-        <div className="flex-1 min-h-screen bg-gray-100 p-16">
+        <div className="flex-1 min-h-screen bg-gray-50 p-16">
           <Outlet></Outlet>
         </div>
       </div>

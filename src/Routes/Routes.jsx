@@ -11,6 +11,7 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Cart from "../pages/Dashboard/Cart";
 import AllUsers from "../pages/Dashboard/AllUsers";
 import AdminRoute from "./AdminRoute";
+import AddItems from "../pages/Dashboard/AddItems";
 
 export const router = createBrowserRouter([
   {
@@ -106,7 +107,7 @@ export const router = createBrowserRouter([
         path: "add-items",
         element: (
           <AdminRoute>
-            <div>add-items</div>
+            <AddItems />
           </AdminRoute>
         ),
       },
