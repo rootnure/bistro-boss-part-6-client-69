@@ -1,0 +1,19 @@
+/* google font cinzel (400, 500, 600, 700, 800), inter (400, 500, 600, 700, 800) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom css / override styles */
+.navbar {
+    @apply !uppercase;
+}
+
+.navbar .active {
+    @apply !text-yellow-500 !bg-transparent font-bold;
+}
+
+.react-tabs__tab--selected {
+    @apply !text-blue-500 !border-blue-500;
+}

@@ -1,0 +1,3 @@
+.dashboard.menu .active {
+    @apply !bg-transparent hover:!bg-black hover:!bg-opacity-10 !text-white;
+}
