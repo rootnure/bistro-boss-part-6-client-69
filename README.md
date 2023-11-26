@@ -4,7 +4,9 @@
 
 ## Today's work
 
--
+- add item page with react hook form
+- upload image to imgbb using **imgbb api**
+- send add item page form data to database
 
 ## React + Vite
 
