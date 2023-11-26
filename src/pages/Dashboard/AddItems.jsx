@@ -6,6 +6,7 @@ import RequiredFieldErrorMsg from "../../components/RequiredFieldErrorMsg";
 import { useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const img_upload_key = import.meta.env.VITE_IMGBB_API_KEY;
 const img_api = `https://api.imgbb.com/1/upload?expiration=15552000&key=${img_upload_key}`;
@@ -13,6 +14,7 @@ const img_api = `https://api.imgbb.com/1/upload?expiration=15552000&key=${img_up
 const AddItems = () => {
   const [categoryErrVisible, setCategoryErrVisible] = useState(false);
   const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -59,6 +61,7 @@ const AddItems = () => {
       // show success msg upon menu insertion
       if (menuRes.data.insertedId) {
         reset();
+        navigate("/dashboard/manage-items");
         Swal.fire({
           position: "top-end",
           icon: "success",
