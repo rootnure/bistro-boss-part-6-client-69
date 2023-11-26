@@ -5,6 +5,7 @@ import { FaPencil } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Loading from "../Shared/Loading";
+import { Link } from "react-router-dom";
 
 const ManageItems = () => {
   const [menu, loading, refetch] = useMenu();
@@ -38,7 +39,7 @@ const ManageItems = () => {
   };
 
   return (
-    <div>
+    <section>
       <SectionTitle heading="Manage All Items" subHeading="Hurry Up" />
       {loading ? (
         <Loading />
@@ -73,11 +74,13 @@ const ManageItems = () => {
                   <td>{name}</td>
                   <td>${price.toFixed(2)}</td>
                   <td>
-                    <button
-                      title={`Delete "${name}" from database`}
-                      className="btn bg-amber-600 hover:bg-amber-700 text-white text-2xl">
-                      <FaPencil />
-                    </button>
+                    <Link to={`/dashboard/update-item/${_id}`}>
+                      <button
+                        title={`Update "${name}"`}
+                        className="btn bg-amber-600 hover:bg-amber-700 text-white text-2xl">
+                        <FaPencil />
+                      </button>
+                    </Link>
                   </td>
                   <th>
                     <button
@@ -93,7 +96,7 @@ const ManageItems = () => {
           </table>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
